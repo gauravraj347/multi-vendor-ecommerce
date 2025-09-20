@@ -6,6 +6,7 @@ const authRoutes = require("./routers/AuthRoutes")
 const userRoutes = require("./routers/UserRoutes")
 const productRoutes = require("./routers/ProductRoutes")
 const sellerProductRoutes = require("./routers/SellerProductRoutes")
+const cartRoutes = require("./routers/CartRoutes")
 const bodyParser = require("body-parser")
 
 const dotenv = require("dotenv");
@@ -28,15 +29,14 @@ app.use("/sellers", sellerRoutes);
 
 app.use("/products", productRoutes);
 app.use("/api/sellers/products", sellerProductRoutes);
+app.use("/cart", cartRoutes);
+
 
 app.use("/admin", adminRoutes);
 
 
 
-
-
-
-
+    
 
 const PORT = process.env.PORT;
 

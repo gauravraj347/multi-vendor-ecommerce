@@ -144,4 +144,6 @@ class ProductService {
        }
     }
 }
+// Export the service instance and also expose the utility function for other services to consume
 module.exports = new ProductService();
+module.exports.calculateDiscountPercentage = calculateDiscountPercentage;
