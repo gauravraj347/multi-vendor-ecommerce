@@ -8,7 +8,7 @@ class JwtProvider {
     }
 
     createJwt(payload) {
-        return jwt.sign(payload, this.secretKey, { expiresIn: "1h" });
+        return jwt.sign(payload, this.secretKey, { expiresIn: "24h" });
     }
 
     getEmailFromJwt(token) {

@@ -4,6 +4,8 @@ const adminRoutes = require("./routers/AdminRoutes")
 const sellerRoutes = require("./routers/SellerRoutes")
 const authRoutes = require("./routers/AuthRoutes")
 const userRoutes = require("./routers/UserRoutes")
+const productRoutes = require("./routers/ProductRoutes")
+const sellerProductRoutes = require("./routers/SellerProductRoutes")
 const bodyParser = require("body-parser")
 
 const dotenv = require("dotenv");
@@ -21,9 +23,15 @@ app.get("/", (req, res) => {
 app.use(bodyParser.json());
 
 app.use("/auth", authRoutes);
-app.use("/sellers", sellerRoutes);
-app.use("/admin", adminRoutes);
 app.use("/api/users", userRoutes);
+app.use("/sellers", sellerRoutes);
+
+app.use("/products", productRoutes);
+app.use("/api/sellers/products", sellerProductRoutes);
+
+app.use("/admin", adminRoutes);
+
+
 
 
 
